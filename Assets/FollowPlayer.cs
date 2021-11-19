@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class FollowPlayer : MonoBehaviour
 {
-    private Vector3 distanceFromPlayer = new Vector3(0, 1, -5);
+    private Vector3 distanceFromPlayer = new Vector3(0, 1.5f, -5);
     void Start()
     {
         Debug.Log("Player MainCamera Initialised...");
@@ -18,7 +18,6 @@ public class FollowPlayer : MonoBehaviour
     {
         Transform playerTransform = GameObject.Find("Player").GetComponent<Transform>();
         Transform cameraTransform = GameObject.Find("MainCamera").GetComponent<Transform>();
-        Debug.Log($"{playerTransform.position.x}, {playerTransform.position.y}, {playerTransform.position.z}");
         cameraTransform.position = playerTransform.position + distanceFromPlayer;
     }
 }
